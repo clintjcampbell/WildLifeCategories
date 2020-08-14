@@ -4,7 +4,7 @@
 """
 Created on Fri Mar 31 09:40:13 2017
 
-@author: yg155d
+@author: Clinton Campbell
 """
 #Maybe change name to data utils and bring other tools into this?
 import os
@@ -251,12 +251,9 @@ def findImageLocationNN(pic1,z, name, index):
 
 
 if __name__=='__main__':
-    #directory  = "C:/Users/yg155d/Documents/img/Brotje/" 
+
     while True:
         os.system('python ConvNet_Animals_DataAugCurrent.py')
-    #output = os.path.join(directory,'BrotjeCategoryMapping.txt')
-    #CreateMapFile(directory,output)
-    #Paths = [os.path.join(directory,'NoFastener2'), os.path.join(directory,'VisFastener')]
-    #OutIm,Outcat = createImageList(Paths)
-    #print(Outcat[2000],OutIm[2000])
+  
+   
     
