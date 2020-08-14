@@ -7,11 +7,11 @@ import cntk
 import os
 import _cntk_py
 from cntk.ops.functions import load_model
-directory  = "C:/Users/yg155d/Documents/img/Brotje/"
-Paths = [os.path.join(directory,'NoFastener2'), os.path.join(directory,'VisFastener')]
+directory  = "/"
+Paths = [os.path.join(directory,'2'), os.path.join(directory,'')]
 OutIm,Outcat = createImageList(Paths)
 count = 0
-#z = load_model( "C:/Users/yg155d/Documents/img/Brotje/Models/atLocationDiscernerRes1.model.dnn")
+#z = load_model( "atLocationDiscernerRes1.model.dnn")
 ZeroCorrect = 0
 ZeroWrong = 0
 OneCorrect = 0
@@ -54,7 +54,7 @@ print (ZeroWrong)
     #cv2.imshow('frame',frame)
     #Image._show(frame)
 #    pic = flattenImages(50,60,frame)
-#    #imageFileName = "C:/Users/yg155d/Documents/img/Brotje/RawImages/img{}".format(count)
+#    #imageFileName = "img{}".format(count)
 #    #frame.save(imageFileName+ ".png")
 
 #    predictions = np.squeeze(z.eval(pic))
@@ -96,7 +96,7 @@ print (ZeroWrong)
 
     #if predictions[1] >1  :
     #    skip = 5
-    #    imageFileName = "C:/Users/yg155d/Documents/img/Brotje/RawImages/img{}_{}".format(count,predictions[2])
+    #    imageFileName = "img{}_{}".format(count,predictions[2])
     #    #frame.save(imageFileName+ ".png")
     #    print ("See Fastener",predictions)
 
