@@ -2,7 +2,7 @@
 """
 Created on Wed Nov 30 09:40:13 2016
 
-@author: yg155d
+@author: Clinton Campbell
 """
 from PIL import Image
 #from cntk.ops.functions import load_model
