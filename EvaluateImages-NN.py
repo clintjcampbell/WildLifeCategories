@@ -7,13 +7,13 @@ import cntk
 import os
 import _cntk_py
 from cntk.ops.functions import load_model
-directory  = "C:/Users/yg155d/Documents/img/Brotje/"
-Paths = [os.path.join(directory,'VisFastener'), os.path.join(directory,'HolesVisible'),os.path.join(directory,'DrillingImages'),os.path.join(directory,'NoFastener')]
-newPaths = ["/Brotje/ReviewImages/VisFastener/","/Brotje/ReviewImages/HolesVisible/","/Brotje/ReviewImages/DrillingImages/","/Brotje/ReviewImages/NoFastener/"]
+directory  = ""
+Paths = [os.path.join(directory,'1'), os.path.join(directory,'2'),os.path.join(directory,'3'),os.path.join(directory,'4')]
+newPaths = ["/ReviewImages/1/","/ReviewImages/2/","/ReviewImages/3/","/ReviewImages/4/"]
 #Paths = [os.path.join(directory,'Test1')]
 OutIm,Outcat = createImageList(Paths)
 count = 0
-z = load_model( "C:/Users/yg155d/Documents/img/Brotje/Models/atLocationDiscerner2c.model.dnn")
+z = load_model( "/atLocationDiscerner2c.model.dnn")
 #size = z.__getattribute__(input)
 ZeroCorrect = 0
 ZeroWrong = 0
@@ -24,7 +24,7 @@ onePredict = []
 zeroPredictWrong = []
 onePredictWrong = []
 index = 13884;
-template = cv2.imread(directory + "Fastener.png")
+template = cv2.imread(directory + ".png")
 while index < len(OutIm):
     frame = Image.open(OutIm[index]) 
     frame = frame.resize((60,50),Image.ANTIALIAS)
@@ -35,7 +35,7 @@ while index < len(OutIm):
 
 
     #pic = flattenImages(50,60,frame)
-#    #imageFileName = "C:/Users/yg155d/Documents/img/Brotje/RawImages/img{}".format(count)
+#    #imageFileName = "RawImages/img{}".format(count)
 #    #frame.save(imageFileName+ ".png")
     
 
@@ -43,7 +43,7 @@ while index < len(OutIm):
     top_class = np.argmax(predictions)
     print (index, "Category: ",Outcat[index], "Prediction: ",top_class, predictions)
     if predictions[Outcat[index]] < 2:
-        newLoc = OutIm[index].replace("/Brotje/","/Brotje/ReviewImages/")
+        newLoc = OutIm[index].replace("/","/ReviewImages/")
         os.rename(OutIm[index],newLoc)
         print ("moved to ", newLoc)
     index = index+1
@@ -73,7 +73,7 @@ while index < len(OutIm):
 #print("oneonemean",zeroPredictWrong[1][:].mean())
     #if predictions[1] >1  :
     #    skip = 5
-    #    imageFileName = "C:/Users/yg155d/Documents/img/Brotje/RawImages/img{}_{}".format(count,predictions[2])
+    #    imageFileName = ""
     #    #frame.save(imageFileName+ ".png")
     #    print ("See Fastener",predictions)
 
