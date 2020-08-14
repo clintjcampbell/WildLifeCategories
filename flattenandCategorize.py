@@ -2,7 +2,7 @@
 """
 Created on Wed Nov 30 09:40:13 2016
 
-@author: yg155d
+@author: Clinton Campbell
 """
 from PIL import Image
 #from cntk.ops.functions import load_model
@@ -166,11 +166,7 @@ def indexLabels(ind, count):
             label.append(0)
     return label
 
-#need to specify directories to search
-#need to parse out input and output images
-#z = load_model("C:/Users/yg155d/Documents/img/Models/03_ConvBatchNorm.dnn")
-#for index in range(len(z.outputs)):
- #   print("Index {} for output: {}.".format(index, z.outputs[index].name))
+
 def writeCategories(output, Paths):
     print ('starting')
     f = open(output,'w+')
